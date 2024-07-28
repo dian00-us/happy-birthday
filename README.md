@@ -2,15 +2,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
+    <title>С Днем Рождения, Даниял!</title>
     <style>
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            font-family: 'Comic Sans MS', 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);
             color: #333;
             text-align: center;
             padding: 20px;
             margin: 0;
+            overflow: hidden;
         }
         .container {
             background: #ffffff;
@@ -19,6 +20,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 700px;
             margin: 20px auto;
+            position: relative;
         }
         h1 {
             color: #FF6347;
@@ -39,6 +41,9 @@
             position: relative;
             max-width: 100%;
             margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .slides {
             display: none;
@@ -53,13 +58,113 @@
             from {opacity: 0.4} 
             to {opacity: 1}
         }
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 48px;
-            }
-            p {
-                font-size: 20px;
-            }
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            background-color: #ff6347;
+            width: 60px;
+            height: 80px;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: float 6s ease-in infinite;
+        }
+        .balloon::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            width: 2px;
+            height: 20px;
+            background: #ff6347;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        .balloon:nth-child(2) {
+            background-color: #ffeb3b;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+        .balloon:nth-child(3) {
+            background-color: #4caf50;
+            animation-duration: 8s;
+            animation-delay: 2s;
+        }
+        .balloon:nth-child(4) {
+            background-color: #2196f3;
+            animation-duration: 6s;
+            animation-delay: 3s;
+        }
+        .balloon:nth-child(5) {
+            background-color: #ff4081;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+        .balloon:nth-child(6) {
+            background-color: #3f51b5;
+            animation-duration: 7s;
+            animation-delay: 5s;
+        }
+        .right-balloons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            right: 0;
+            top: 0;
+        }
+        .right-balloons .balloon {
+            left: auto;
+            right: -100px;
+        }
+        .confetti {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #ff6347;
+            opacity: 0.8;
+            animation: fall 4s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+        .confetti:nth-child(2) {
+            background: #ffeb3b;
+            animation-duration: 4.5s;
+            animation-delay: 0.2s;
+        }
+        .confetti:nth-child(3) {
+            background: #4caf50;
+            animation-duration: 5s;
+            animation-delay: 0.4s;
+        }
+        .confetti:nth-child(4) {
+            background: #2196f3;
+            animation-duration: 5.5s;
+            animation-delay: 0.6s;
+        }
+        .confetti:nth-child(5) {
+            background: #ff4081;
+            animation-duration: 6s;
+            animation-delay: 0.8s;
+        }
+        .confetti:nth-child(6) {
+            background: #3f51b5;
+            animation-duration: 6.5s;
+            animation-delay: 1s;
         }
         .audio-control {
             margin: 20px 0;
@@ -80,6 +185,22 @@
     </style>
 </head>
 <body>
+    <div class="balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
+    <div class="right-balloons">
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+        <div class="balloon"></div>
+    </div>
     <div class="container">
         <h1>Даниял, туған күніңмен!!!</h1>
         <div class="heart">❤</div>
@@ -247,23 +368,31 @@
             <source src="https://github.com/dian00-us/birthday/raw/main/birthday_song.mp3" type="audio/mp3">
         </audio>
     </div>
+    <div class="confetti" style="top: 0; right: 10%;"></div>
+    <div class="confetti" style="top: 10%; right: 10%;"></div>
+    <div class="confetti" style="top: 20%; right: 10%;"></div>
+    <div class="confetti" style="top: 30%; right: 10%;"></div>
+    <div class="confetti" style="top: 40%; right: 10%;"></div>
+    <div class="confetti" style="top: 50%; right: 10%;"></div>
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
+<script>
+    let slideIndex = 0;
+    showSlides();
 
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000); // Change image every 3 seconds
+    function showSlides() {
+        let slides = document.getElementsByClassName("slides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
 
-        function playAudio() {
-            document.getElementById("birthdayAudio").play();
-        }
-    </script>
+    function playAudio() {
+        document.getElementById("birthdayAudio").play();
+    }
+</script>
+</body>
+</html>
