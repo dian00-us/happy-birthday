@@ -96,40 +96,46 @@
         
         <div class="slideshow-container">
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image1.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/fb28c258-3943-483d-be73-7fcf4fad8d93" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image2.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/24731ee9-9ada-43e8-b04e-149af1d8bd71" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image3.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/c18c80cd-bda6-4c48-b839-e5e071080aaf" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image4.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/e9e11885-1aae-4423-a79c-e16809e5b59a" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image5.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/23220877-832d-4d77-b495-1ae018a6781a" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image6.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/98565a58-96dc-4783-ad04-23d49615b6c2" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image7.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/2384932c-8540-49df-96e4-164aa58abf63" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image8.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/b44c1679-6767-438e-a09e-1a751f4c4a57" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image9.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/a8289e27-edce-43c0-baad-fde1daf8820f" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image10.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/85154b28-9c76-4be5-99c5-777430fef40f" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image11.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/7c9850bb-9065-4787-a6df-3f23a20eb9f1" style="width:100%; border-radius: 10px;">
             </div>
             <div class="slides fade">
-                <img src="C:\Users\THINKPAD\Desktop\birthday\images\image12.jpg" style="width:100%; border-radius: 10px;">
+                <img src="https://github.com/user-attachments/assets/20bd8a41-3e9e-4d50-8b2d-a518c477ec0e" style="width:100%; border-radius: 10px;">
+            </div>
+            <div class="slides fade">
+                <img src="https://github.com/user-attachments/assets/95be8e54-ba28-4874-b72e-cd5a77db0387" style="width:100%; border-radius: 10px;">
+            </div>
+            <div class="slides fade">
+                <img src="https://github.com/user-attachments/assets/9a568b2e-8491-4ec1-b4db-2086850b82ae" style="width:100%; border-radius: 10px;">
             </div>
         </div>
     </div>
