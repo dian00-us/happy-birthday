@@ -394,5 +394,3 @@
         document.getElementById("birthdayAudio").play();
     }
 </script>
-</body>
-</html>
