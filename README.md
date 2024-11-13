@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +6,8 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fce4ec;
-            color: #880e4f;
+            background-color: #fff0f5;
+            color: #8e44ad;
             text-align: center;
         }
         .container {
@@ -17,7 +16,8 @@
             padding: 20px;
             border: 2px solid #f8bbd0;
             border-radius: 15px;
-            background-color: #ffffff;
+            background-color: #fdf5e6;
+            position: relative;
         }
         h1 {
             color: #d81b60;
@@ -39,8 +39,27 @@
             padding: 15px;
             border: 2px dashed #f06292;
             border-radius: 10px;
-            background-color: #f8bbd0;
+            background-color: #fce4ec;
             font-size: 1.2em;
+        }
+        .heart, .balloon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: float 5s infinite ease-in-out;
+        }
+        .heart {
+            background: url('heart.png') no-repeat center;
+            background-size: cover;
+        }
+        .balloon {
+            background: url('balloon.png') no-repeat center;
+            background-size: cover;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
@@ -61,7 +80,14 @@
         <div class="message">
             Дорогая мама, поздравляю тебя с 50-летием! Ты самая замечательная и любимая мама в мире! Желаю тебе счастья, здоровья и любви!
         </div>
+        <div class="heart" style="top: 10px; left: 10px;"></div>
+        <div class="balloon" style="bottom: 10px; right: 10px;"></div>
     </div>
+
+    <audio controls autoplay loop>
+        <source src="song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
     <script>
         let slideIndex = 0;
@@ -82,4 +108,5 @@
     </script>
 </body>
 </html>
+
 
