@@ -33,13 +33,13 @@
         }
         
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             color: #a15d48;
             margin: 0;
         }
 
         header p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             color: #7a4f35;
             margin-top: 10px;
         }
@@ -71,11 +71,11 @@
             background-color: #f49e7e;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
+            padding: 12px 25px;
+            font-size: 1.5em;
             cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
             transition: background-color 0.3s;
         }
 
@@ -83,24 +83,43 @@
             background-color: #d78f6c;
         }
 
-        .message-box {
+        /* Оформление поздравления в виде конверта */
+        .envelope {
+            width: 80%;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 40px;
             background: #f5d0a9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
         }
 
-        .message-box h2 {
-            font-size: 2.5em;
+        .envelope:before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 30px solid #f5d0a9;
+        }
+
+        .envelope h2 {
+            font-size: 3em;
             color: #7a4f35;
             margin: 0;
         }
 
-        .message-box p {
-            font-size: 1.2em;
+        .envelope p {
+            font-size: 1.4em;
             color: #5c3b2f;
-            margin-top: 10px;
+            margin-top: 15px;
+            line-height: 1.5;
         }
 
         /* Анимация сердечек */
@@ -124,21 +143,30 @@
             }
         }
 
-        /* Стиль для кнопки на мобильных устройствах */
+        /* Мобильная версия */
         @media (max-width: 600px) {
             header h1 {
                 font-size: 2em;
             }
 
-            .message-box h2 {
-                font-size: 2em;
+            .button {
+                font-size: 1.2em;
+                padding: 8px 20px;
             }
 
-            .button {
-                font-size: 1em;
-                padding: 8px 15px;
+            .envelope {
+                padding: 20px;
+            }
+
+            .envelope h2 {
+                font-size: 2.5em;
+            }
+
+            .envelope p {
+                font-size: 1.2em;
             }
         }
+
     </style>
 </head>
 <body>
@@ -173,19 +201,18 @@
 
     <button class="button" onclick="window.scrollTo(0, document.body.scrollHeight);">Посмотреть поздравление</button>
 
-    <!-- Окно с поздравлением -->
-    <div class="message-box">
+    <!-- Окно с поздравлением в виде конверта -->
+    <div class="envelope">
         <h2>Дорогая мама!</h2>
-        <p>Поздравляю тебя с 50-летием! Ты — невероятная, добрая, заботливая и любящая. Ты — наша поддержка и вдохновение. Пусть этот день будет наполнен счастьем, радостью и самыми светлыми моментами. Мы тебя очень любим!</p>
+        <p>Поздравляю тебя с этим чудесным и важным событием! 50 лет — это не просто цифра, это целая жизнь, наполненная радостью, трудностями, победами и бесконечной любовью. Ты — моя опора, вдохновение и пример для подражания. Пусть впереди будут только самые яркие и счастливые моменты! Желаю тебе здоровья, счастья и нескончаемой гармонии в душе. Мы тебя очень любим и гордимся тобой!</p>
     </div>
-</div>
 
-<!-- Анимация сердечек -->
-<div class="heart" style="top: 10%; left: 20%;">❤️</div>
-<div class="heart" style="top: 30%; left: 40%;">❤️</div>
-<div class="heart" style="top: 50%; left: 60%;">❤️</div>
-<div class="heart" style="top: 70%; left: 80%;">❤️</div>
-<div class="heart" style="top: 80%; left: 15%;">❤️</div>
+    <div class="heart" style="top: 10%; left: 20%;">❤️</div>
+    <div class="heart" style="top: 30%; left: 40%;">❤️</div>
+    <div class="heart" style="top: 50%; left: 60%;">❤️</div>
+    <div class="heart" style="top: 70%; left: 80%;">❤️</div>
+    <div class="heart" style="top: 80%; left: 15%;">❤️</div>
+</div>
 
 <script>
     // Слайд-шоу
