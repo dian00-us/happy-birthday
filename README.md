@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             color: #fff;
-            background: #f3e6d5; /* Пастельный теплый фон */
+            background: #e6d1b3; /* Уютный фон с теплым оттенком */
             overflow: hidden;
             position: relative;
         }
@@ -22,54 +22,34 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, #f6d8b5, #f3e6d5); /* Светло-песочный градиент */
+            background: linear-gradient(to bottom, #f5e2d8, #e6d1b3); /* Теплый градиент */
             z-index: -1;
+        }
+
+        /* Контейнер для текста и конверта, выравнивание */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 0 10%;
         }
 
         header {
             text-align: left;
-            padding: 40px;
-            margin: 0 10%;
-            font-size: 3.8em;
-            color: #b47d3c; /* Золотисто-бежевый цвет */
+            font-size: 3.5em;
+            color: #b79d7e; /* Золотисто-бежевый */
             letter-spacing: 2px;
             font-weight: bold;
-            opacity: 0;
             animation: fadeInLeft 2s ease-in-out forwards;
+            width: 40%;
         }
 
         header p {
-            font-size: 1.6em;
+            font-size: 1.5em;
             color: #b79d7e;
             margin-top: 10px;
-            opacity: 0;
             animation: fadeInLeft 3s ease-in-out forwards;
-        }
-
-        .content {
-            padding: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 0 10%;
-        }
-
-        .slideshow-container {
-            max-width: 700px;
-            position: relative;
-            margin: auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .slides {
-            display: none;
-        }
-
-        .slide img {
-            width: 100%;
-            border-radius: 10px;
         }
 
         .envelope {
@@ -98,7 +78,7 @@
         }
 
         .envelope h2 {
-            font-size: 3.2em;
+            font-size: 2.8em;
             color: #fff;
             margin: 0;
         }
@@ -108,6 +88,18 @@
             color: #fff;
             margin-top: 20px;
             line-height: 1.5;
+        }
+
+        /* Анимация для появления текста */
+        @keyframes fadeInLeft {
+            0% { opacity: 0; transform: translateX(-30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Анимация появления конверта */
+        @keyframes slideInRight {
+            0% { opacity: 0; transform: translateX(30px); }
+            100% { opacity: 1; transform: translateX(0); }
         }
 
         /* Анимация для цифры 50 */
@@ -147,18 +139,6 @@
                 opacity: 0;
                 transform: scale(0.5);
             }
-        }
-
-        /* Анимация появления текста */
-        @keyframes fadeInLeft {
-            0% { opacity: 0; transform: translateX(-30px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-
-        /* Анимация появления конверта */
-        @keyframes slideInRight {
-            0% { opacity: 0; transform: translateX(30px); }
-            100% { opacity: 1; transform: translateX(0); }
         }
 
         /* Анимация для сердечек */
@@ -278,10 +258,19 @@
 <!-- Фон с градиентом -->
 <div class="background"></div>
 
-<header>
-    <h1>С Днем Рождения, мама!</h1>
-    <p>Тебе исполняется 50 лет!</p>
-</header>
+<div class="content">
+    <!-- Текст на левой стороне -->
+    <header>
+        <h1>С Днем Рождения, мама!</h1>
+        <p>Тебе исполняется 50 лет!</p>
+    </header>
+
+    <!-- Конверт с поздравлением на правой стороне -->
+    <div class="envelope">
+        <h2>Дорогая мама!</h2>
+        <p>Поздравляю тебя с этим чудесным и важным событием! 50 лет — это не просто цифра, это целая жизнь, наполненная радостью, трудностями, победами и бесконечной любовью. Ты — моя опора, вдохновение и пример для подражания. Пусть впереди будут только самые яркие и счастливые моменты! Желаю тебе здоровья, счастья и нескончаемой гармонии в душе. Мы тебя очень любим и гордимся тобой!</p>
+    </div>
+</div>
 
 <!-- Вставка фона музыки -->
 <audio autoplay loop>
@@ -289,33 +278,7 @@
     Ваш браузер не поддерживает элемент audio.
 </audio>
 
-<div class="content">
-    <!-- Слайд-шоу -->
-    <div class="slideshow-container">
-        <div class="slides fade">
-            <div class="slide">
-                <img src="photo1.jpg" alt="Фото 1">
-            </div>
-        </div>
-        <div class="slides fade">
-            <div class="slide">
-                <img src="photo2.jpg" alt="Фото 2">
-            </div>
-        </div>
-        <div class="slides fade">
-            <div class="slide">
-                <img src="photo3.jpg" alt="Фото 3">
-            </div>
-        </div>
-    </div>
-
-    <div class="envelope">
-        <h2>Дорогая мама!</h2>
-        <p>Поздравляю тебя с этим чудесным и важным событием! 50 лет — это не просто цифра, это целая жизнь, наполненная радостью, трудностями, победами и бесконечной любовью. Ты — моя опора, вдохновение и пример для подражания. Пусть впереди будут только самые яркие и счастливые моменты! Желаю тебе здоровья, счастья и нескончаемой гармонии в душе. Мы тебя очень любим и гордимся тобой!</p>
-    </div>
-</div>
-
-<!-- Анимация для чисел 50 -->
+<!-- Анимация для цифры 50 -->
 <div class="number number-50 left">50</div>
 <div class="number number-50 right">50</div>
 
@@ -364,6 +327,7 @@
 
 </body>
 </html>
+
 
 
 
