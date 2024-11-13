@@ -13,6 +13,10 @@
             background: #e6d1b3; /* Уютный фон с теплым оттенком */
             overflow: hidden;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         /* Плавный фон с градиентом */
@@ -26,13 +30,15 @@
             z-index: -1;
         }
 
-        /* Контейнер для текста и конверта, выравнивание */
+        /* Контейнер для текста и конверта */
         .content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            padding: 0 10%;
+            width: 80%;
+            max-width: 1200px;
+            padding: 40px;
+            box-sizing: border-box;
         }
 
         header {
@@ -62,6 +68,7 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             opacity: 0;
             animation: slideInRight 2s ease-out forwards;
+            text-align: left;
         }
 
         .envelope:before {
@@ -81,13 +88,15 @@
             font-size: 2.8em;
             color: #fff;
             margin: 0;
+            text-align: left;
         }
 
         .envelope p {
-            font-size: 1.4em;
+            font-size: 1.5em;
             color: #fff;
             margin-top: 20px;
-            line-height: 1.5;
+            line-height: 1.6;
+            text-align: left;
         }
 
         /* Анимация для появления текста */
@@ -299,22 +308,6 @@
 </div>
 
 <script>
-    // Слайд-шоу
-    let slideIndex = 0;
-
-    function showSlides() {
-        let slides = document.getElementsByClassName("slides");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1 }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // Изменение слайда каждые 3 секунды
-    }
-
-    showSlides(); // Инициализация слайд-шоу
-
     // Открытие и закрытие всплывающего окна
     function showPopup() {
         document.getElementById("popup").style.display = "flex";
