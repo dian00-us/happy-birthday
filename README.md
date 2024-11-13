@@ -1,3 +1,4 @@
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -8,8 +9,8 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background: #f9f4f2; /* Нюдовый фон */
+            color: #fff;
+            background: #2d2b2b; /* Темный уютный фон */
             overflow: hidden;
             position: relative;
         }
@@ -21,29 +22,29 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, #f1e3d5, #f4e0c1); /* Нежный градиент */
+            background: linear-gradient(to bottom, #3f3535, #4f4747); /* Теплый и уютный градиент */
             z-index: -1;
         }
 
         header {
             text-align: center;
-            background: #f8d9bb; /* Светло-нюдовый оттенок */
-            padding: 30px;
+            background: #b79d7e; /* Темно-золотистый цвет */
+            padding: 40px;
             border-radius: 0 0 30px 30px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             margin: 0 10%;
         }
 
         header h1 {
-            font-size: 3.5em;
-            color: #b98d62;
+            font-size: 3.8em;
+            color: #fff5f2; /* Молочно-белый цвет для заголовка */
             margin: 0;
             animation: fadeIn 2s ease-in-out;
         }
 
         header p {
-            font-size: 1.5em;
-            color: #7c5c3a;
+            font-size: 1.6em;
+            color: #f0d0a4;
             margin-top: 10px;
             opacity: 0;
             animation: fadeIn 3s ease-in-out;
@@ -61,7 +62,7 @@
             margin: auto;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .slides {
@@ -74,7 +75,7 @@
         }
 
         .button {
-            background-color: #f0b890;
+            background-color: #c29a6f;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -86,7 +87,7 @@
         }
 
         .button:hover {
-            background-color: #d18b5a;
+            background-color: #a8854b;
             transform: scale(1.05);
         }
 
@@ -96,10 +97,10 @@
             max-width: 800px;
             margin: 40px auto;
             padding: 40px;
-            background: #f7e8d1;
+            background: #704f40;
             border-radius: 25px;
             position: relative;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             opacity: 0;
             animation: slideIn 2s ease-out forwards;
         }
@@ -114,18 +115,18 @@
             height: 0;
             border-left: 60px solid transparent;
             border-right: 60px solid transparent;
-            border-bottom: 30px solid #f7e8d1;
+            border-bottom: 30px solid #704f40;
         }
 
         .envelope h2 {
             font-size: 3.2em;
-            color: #f0b890;
+            color: #f0d0a4;
             margin: 0;
         }
 
         .envelope p {
             font-size: 1.4em;
-            color: #7c5c3a;
+            color: #fff;
             margin-top: 20px;
             line-height: 1.5;
         }
@@ -133,7 +134,7 @@
         /* Анимация сердечек */
         .heart {
             position: absolute;
-            font-size: 40px;
+            font-size: 50px;
             color: #f28c8c;
             animation: float 10s infinite ease-in-out;
             opacity: 0.8;
@@ -250,6 +251,42 @@
             }
         }
 
+        /* Анимация для чисел 5 и 0 */
+        .number {
+            position: absolute;
+            font-size: 120px;
+            color: #f0b890;
+            font-weight: bold;
+            animation: numberAnim 3s ease-in-out infinite;
+        }
+
+        .number-5 {
+            top: 20%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .number-0 {
+            top: 40%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        @keyframes numberAnim {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -261,6 +298,12 @@
     <h1>С Днем Рождения, мама!</h1>
     <p>Тебе исполняется 50 лет!</p>
 </header>
+
+<!-- Вставка фона музыки -->
+<audio autoplay loop>
+    <source src="your-music-file.mp3" type="audio/mp3">
+    Ваш браузер не поддерживает элемент audio.
+</audio>
 
 <div class="content">
     <!-- Слайд-шоу -->
@@ -295,6 +338,10 @@
     <div class="heart" style="top: 50%; left: 60%;">❤️</div>
     <div class="heart" style="top: 70%; left: 80%;">❤️</div>
     <div class="heart" style="top: 80%; left: 15%;">❤️</div>
+
+    <!-- Анимация для чисел 5 и 0 -->
+    <div class="number number-5">5</div>
+    <div class="number number-0">0</div>
 </div>
 
 <!-- Всплывающее окно сюрприза -->
