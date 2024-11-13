@@ -1,174 +1,93 @@
-<!DOCTYPE html>
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Поздравление с 50-летием!</title>
     <style>
+        /* Основные стили для страницы */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Verdana', sans-serif;
             margin: 0;
             padding: 0;
-            color: #fff;
-            background: #e6d1b3; /* Уютный фон с теплым оттенком */
+            background: #f3f1e8; /* Теплый уютный фон */
+            color: #5a4e44; /* Нежный темно-бежевый текст */
             overflow: hidden;
-            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        /* Плавный фон с градиентом */
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, #f5e2d8, #e6d1b3); /* Теплый градиент */
-            z-index: -1;
-        }
-
-        /* Контейнер для текста и конверта */
+        /* Контейнер для всего содержимого */
         .content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 80%;
+            width: 90%;
             max-width: 1200px;
             padding: 40px;
             box-sizing: border-box;
+            border-radius: 20px;
+            background: #fff8e1; /* Легкий кремовый оттенок */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
+        /* Заголовок на левой стороне */
         header {
             text-align: left;
-            font-size: 3.5em;
-            color: #b79d7e; /* Золотисто-бежевый */
-            letter-spacing: 2px;
-            font-weight: bold;
+            width: 45%;
+            font-size: 2.8em;
+            color: #b29b6e; /* Золотисто-бежевый */
+            font-weight: 600;
+            line-height: 1.2;
             animation: fadeInLeft 2s ease-in-out forwards;
-            width: 40%;
         }
 
         header p {
-            font-size: 1.5em;
-            color: #b79d7e;
-            margin-top: 10px;
+            font-size: 1.6em;
+            color: #b29b6e;
+            margin-top: 20px;
+            font-weight: 400;
             animation: fadeInLeft 3s ease-in-out forwards;
         }
 
+        /* Конверт с поздравлением */
         .envelope {
             width: 50%;
             max-width: 600px;
             padding: 40px;
-            background: #d5b98a; /* Легкий золотисто-бежевый */
-            border-radius: 25px;
-            position: relative;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            animation: slideInRight 2s ease-out forwards;
+            background: #f8d7b1; /* Светлый персиковый оттенок */
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             text-align: left;
-        }
-
-        .envelope:before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 60px solid transparent;
-            border-right: 60px solid transparent;
-            border-bottom: 30px solid #d5b98a;
+            opacity: 0;
+            animation: fadeInRight 2s ease-out forwards;
         }
 
         .envelope h2 {
-            font-size: 2.8em;
-            color: #fff;
+            font-size: 2.5em;
+            color: #5a4e44; /* Темно-бежевый */
             margin: 0;
-            text-align: left;
+            margin-bottom: 20px;
         }
 
         .envelope p {
             font-size: 1.5em;
-            color: #fff;
-            margin-top: 20px;
+            color: #5a4e44;
             line-height: 1.6;
-            text-align: left;
+            margin-top: 20px;
         }
 
-        /* Анимация для появления текста */
+        /* Анимация для текста */
         @keyframes fadeInLeft {
             0% { opacity: 0; transform: translateX(-30px); }
             100% { opacity: 1; transform: translateX(0); }
         }
 
-        /* Анимация появления конверта */
-        @keyframes slideInRight {
+        @keyframes fadeInRight {
             0% { opacity: 0; transform: translateX(30px); }
             100% { opacity: 1; transform: translateX(0); }
-        }
-
-        /* Анимация для цифры 50 */
-        .number {
-            position: absolute;
-            font-size: 150px;
-            color: #b79d7e;
-            font-weight: bold;
-            animation: numberAnim 3s ease-in-out infinite;
-            opacity: 0.6;
-        }
-
-        .number-50 {
-            animation-delay: 0s;
-        }
-
-        .number-50.left {
-            top: 10%;
-            left: 5%;
-        }
-
-        .number-50.right {
-            top: 40%;
-            left: 80%;
-        }
-
-        @keyframes numberAnim {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.3);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-        }
-
-        /* Анимация для сердечек */
-        .heart {
-            position: absolute;
-            font-size: 50px;
-            color: #f28c8c;
-            animation: float 10s infinite ease-in-out;
-            opacity: 0.8;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-200px) rotate(180deg);
-            }
-            100% {
-                transform: translateY(0) rotate(360deg);
-            }
         }
 
         /* Всплывающее окно сюрприза */
@@ -178,7 +97,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             display: none;
             justify-content: center;
             align-items: center;
@@ -196,20 +115,21 @@
         }
 
         .popup-content h3 {
-            font-size: 2.5em;
-            color: #f0b890;
+            font-size: 2.2em;
+            color: #f28c8c; /* Розовый акцент */
         }
 
         .popup-content p {
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: #7c5c3a;
+            margin-top: 10px;
         }
 
         .close-btn {
             background: #f0b890;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 1.2em;
             cursor: pointer;
             border-radius: 8px;
@@ -220,43 +140,37 @@
             background: #d18b5a;
         }
 
-        /* Всплывающее окно - анимация */
         @keyframes popupIn {
             0% { opacity: 0; transform: scale(0.7); }
             100% { opacity: 1; transform: scale(1); }
         }
 
         /* Мобильная версия */
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2.5em;
+        @media (max-width: 768px) {
+            header {
+                font-size: 2.2em;
+                width: 100%;
+                text-align: center;
             }
 
-            .button {
-                font-size: 1.2em;
-                padding: 12px 20px;
+            .content {
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px;
             }
 
             .envelope {
+                margin-top: 40px;
+                width: 100%;
                 padding: 20px;
             }
 
             .envelope h2 {
-                font-size: 2.5em;
+                font-size: 2em;
             }
 
             .envelope p {
                 font-size: 1.2em;
-            }
-
-            header {
-                margin: 0 5%;
-            }
-
-            .content {
-                margin: 0 5%;
-                flex-direction: column;
-                align-items: center;
             }
         }
 
@@ -287,17 +201,6 @@
     Ваш браузер не поддерживает элемент audio.
 </audio>
 
-<!-- Анимация для цифры 50 -->
-<div class="number number-50 left">50</div>
-<div class="number number-50 right">50</div>
-
-<!-- Анимация для сердечек -->
-<div class="heart" style="top: 10%; left: 20%;">❤️</div>
-<div class="heart" style="top: 30%; left: 40%;">❤️</div>
-<div class="heart" style="top: 50%; left: 60%;">❤️</div>
-<div class="heart" style="top: 70%; left: 80%;">❤️</div>
-<div class="heart" style="top: 80%; left: 15%;">❤️</div>
-
 <!-- Всплывающее окно сюрприза -->
 <div class="popup" id="popup">
     <div class="popup-content">
@@ -316,6 +219,9 @@
     function closePopup() {
         document.getElementById("popup").style.display = "none";
     }
+
+    // Показать всплывающее окно с небольшим задержкой
+    setTimeout(showPopup, 3000); // Показывать через 3 секунды
 </script>
 
 </body>
