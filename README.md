@@ -1,4 +1,3 @@
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +9,7 @@
             margin: 0;
             padding: 0;
             color: #333;
-            background: #faf2f2; /* Пастельный розовый фон */
+            background: #f9f4f2; /* Нюдовый фон */
             overflow: hidden;
             position: relative;
         }
@@ -22,40 +21,42 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, #f9d5e5, #f3cfe6);
+            background: linear-gradient(to bottom, #f1e3d5, #f4e0c1); /* Нежный градиент */
             z-index: -1;
         }
 
         header {
             text-align: center;
-            background: #f5b8b8;
-            padding: 20px;
+            background: #f8d9bb; /* Светло-нюдовый оттенок */
+            padding: 30px;
             border-radius: 0 0 30px 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 0 10%;
         }
 
         header h1 {
-            font-size: 3em;
-            color: #a15d48;
+            font-size: 3.5em;
+            color: #b98d62;
             margin: 0;
             animation: fadeIn 2s ease-in-out;
         }
 
         header p {
-            font-size: 1.4em;
-            color: #7a4f35;
+            font-size: 1.5em;
+            color: #7c5c3a;
             margin-top: 10px;
             opacity: 0;
             animation: fadeIn 3s ease-in-out;
         }
 
         .content {
-            padding: 30px 20px;
+            padding: 30px;
             text-align: center;
+            margin: 0 10%;
         }
 
         .slideshow-container {
-            max-width: 700px;
+            max-width: 800px;
             position: relative;
             margin: auto;
             border-radius: 10px;
@@ -73,7 +74,7 @@
         }
 
         .button {
-            background-color: #f2b8b8;
+            background-color: #f0b890;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -85,17 +86,17 @@
         }
 
         .button:hover {
-            background-color: #d59d9d;
+            background-color: #d18b5a;
             transform: scale(1.05);
         }
 
         /* Оформление поздравления в виде конверта */
         .envelope {
             width: 80%;
-            max-width: 700px;
-            margin: 30px auto;
+            max-width: 800px;
+            margin: 40px auto;
             padding: 40px;
-            background: #fce4ec;
+            background: #f7e8d1;
             border-radius: 25px;
             position: relative;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -113,18 +114,18 @@
             height: 0;
             border-left: 60px solid transparent;
             border-right: 60px solid transparent;
-            border-bottom: 30px solid #fce4ec;
+            border-bottom: 30px solid #f7e8d1;
         }
 
         .envelope h2 {
             font-size: 3.2em;
-            color: #f38b89;
+            color: #f0b890;
             margin: 0;
         }
 
         .envelope p {
             font-size: 1.4em;
-            color: #7a4f35;
+            color: #7c5c3a;
             margin-top: 20px;
             line-height: 1.5;
         }
@@ -133,7 +134,7 @@
         .heart {
             position: absolute;
             font-size: 40px;
-            color: #ff4b5c;
+            color: #f28c8c;
             animation: float 10s infinite ease-in-out;
             opacity: 0.8;
         }
@@ -187,17 +188,17 @@
         }
 
         .popup-content h3 {
-            font-size: 2em;
-            color: #f38b89;
+            font-size: 2.5em;
+            color: #f0b890;
         }
 
         .popup-content p {
             font-size: 1.5em;
-            color: #7a4f35;
+            color: #7c5c3a;
         }
 
         .close-btn {
-            background: #ff4b5c;
+            background: #f0b890;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -208,7 +209,7 @@
         }
 
         .close-btn:hover {
-            background: #ff6f7f;
+            background: #d18b5a;
         }
 
         /* Всплывающее окно - анимация */
@@ -238,6 +239,14 @@
 
             .envelope p {
                 font-size: 1.2em;
+            }
+
+            header {
+                margin: 0 5%;
+            }
+
+            .content {
+                margin: 0 5%;
             }
         }
 
@@ -326,6 +335,7 @@
 
 </body>
 </html>
+
 
 
 
