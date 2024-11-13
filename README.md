@@ -1,3 +1,4 @@
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +7,11 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: #f0e6f6;
             margin: 0;
             padding: 0;
             color: #333;
-            overflow: hidden; /* Убираем полосу прокрутки */
+            background: #faf2f2; /* Пастельный розовый фон */
+            overflow: hidden;
             position: relative;
         }
 
@@ -21,36 +22,40 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            background: linear-gradient(to bottom, #f9d5e5, #f3cfe6);
             z-index: -1;
         }
 
         header {
             text-align: center;
-            background: #ffcc99;
+            background: #f5b8b8;
             padding: 20px;
             border-radius: 0 0 30px 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
-        
+
         header h1 {
             font-size: 3em;
             color: #a15d48;
             margin: 0;
+            animation: fadeIn 2s ease-in-out;
         }
 
         header p {
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: #7a4f35;
             margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out;
         }
 
         .content {
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
 
         .slideshow-container {
-            max-width: 600px;
+            max-width: 700px;
             position: relative;
             margin: auto;
             border-radius: 10px;
@@ -68,19 +73,20 @@
         }
 
         .button {
-            background-color: #f49e7e;
+            background-color: #f2b8b8;
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 1.5em;
+            padding: 15px 30px;
+            font-size: 1.4em;
             cursor: pointer;
-            border-radius: 8px;
+            border-radius: 12px;
             margin-top: 30px;
-            transition: background-color 0.3s;
+            transition: all 0.3s ease;
         }
 
         .button:hover {
-            background-color: #d78f6c;
+            background-color: #d59d9d;
+            transform: scale(1.05);
         }
 
         /* Оформление поздравления в виде конверта */
@@ -89,11 +95,12 @@
             max-width: 700px;
             margin: 30px auto;
             padding: 40px;
-            background: #f5d0a9;
-            border-radius: 20px;
+            background: #fce4ec;
+            border-radius: 25px;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: slideIn 2s ease-out forwards;
         }
 
         .envelope:before {
@@ -106,19 +113,19 @@
             height: 0;
             border-left: 60px solid transparent;
             border-right: 60px solid transparent;
-            border-bottom: 30px solid #f5d0a9;
+            border-bottom: 30px solid #fce4ec;
         }
 
         .envelope h2 {
-            font-size: 3em;
-            color: #7a4f35;
+            font-size: 3.2em;
+            color: #f38b89;
             margin: 0;
         }
 
         .envelope p {
             font-size: 1.4em;
-            color: #5c3b2f;
-            margin-top: 15px;
+            color: #7a4f35;
+            margin-top: 20px;
             line-height: 1.5;
         }
 
@@ -127,7 +134,7 @@
             position: absolute;
             font-size: 40px;
             color: #ff4b5c;
-            animation: float 10s infinite;
+            animation: float 10s infinite ease-in-out;
             opacity: 0.8;
         }
 
@@ -143,15 +150,82 @@
             }
         }
 
+        /* Анимация появления заголовка */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Анимация появления конверта */
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Всплывающее окно сюрприза */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: popupIn 1s ease-out forwards;
+        }
+
+        .popup-content {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-content h3 {
+            font-size: 2em;
+            color: #f38b89;
+        }
+
+        .popup-content p {
+            font-size: 1.5em;
+            color: #7a4f35;
+        }
+
+        .close-btn {
+            background: #ff4b5c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .close-btn:hover {
+            background: #ff6f7f;
+        }
+
+        /* Всплывающее окно - анимация */
+        @keyframes popupIn {
+            0% { opacity: 0; transform: scale(0.7); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
         /* Мобильная версия */
         @media (max-width: 600px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
 
             .button {
                 font-size: 1.2em;
-                padding: 8px 20px;
+                padding: 12px 20px;
             }
 
             .envelope {
@@ -199,7 +273,7 @@
         </div>
     </div>
 
-    <button class="button" onclick="window.scrollTo(0, document.body.scrollHeight);">Посмотреть поздравление</button>
+    <button class="button" onclick="showPopup();">Открыть сюрприз</button>
 
     <!-- Окно с поздравлением в виде конверта -->
     <div class="envelope">
@@ -212,6 +286,15 @@
     <div class="heart" style="top: 50%; left: 60%;">❤️</div>
     <div class="heart" style="top: 70%; left: 80%;">❤️</div>
     <div class="heart" style="top: 80%; left: 15%;">❤️</div>
+</div>
+
+<!-- Всплывающее окно сюрприза -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <h3>Сюрприз для тебя!</h3>
+        <p>Мама, ты — самая лучшая в мире! Спасибо за все, что ты делаешь для нас.</p>
+        <button class="close-btn" onclick="closePopup();">Закрыть</button>
+    </div>
 </div>
 
 <script>
@@ -230,10 +313,20 @@
     }
 
     showSlides(); // Инициализация слайд-шоу
+
+    // Открытие и закрытие всплывающего окна
+    function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
 </script>
 
 </body>
 </html>
+
 
 
 
