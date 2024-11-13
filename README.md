@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,21 +7,21 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fff0f5;
-            color: #8e44ad;
+            background-color: #efe2d5; /* Более темный пастельный оттенок */
+            color: #6a1b9a;
             text-align: center;
         }
         .container {
             margin: 20px auto;
             max-width: 600px;
             padding: 20px;
-            border: 2px solid #f8bbd0;
+            border: 2px solid #ba8baf;
             border-radius: 15px;
-            background-color: #fdf5e6;
+            background-color: #d7c0e3; /* Более темный пастельный оттенок */
             position: relative;
         }
         h1 {
-            color: #d81b60;
+            color: #8e24aa;
         }
         .slideshow-container {
             position: relative;
@@ -37,9 +38,9 @@
         .message {
             margin-top: 20px;
             padding: 15px;
-            border: 2px dashed #f06292;
+            border: 2px dashed #7b6a93;
             border-radius: 10px;
-            background-color: #fce4ec;
+            background-color: #c5b1d5; /* Более темный пастельный оттенок */
             font-size: 1.2em;
         }
         .heart, .balloon {
@@ -51,6 +52,7 @@
         .heart {
             background: url('heart.png') no-repeat center;
             background-size: cover;
+            animation: pulse 1.5s infinite ease-in-out;
         }
         .balloon {
             background: url('balloon.png') no-repeat center;
@@ -60,6 +62,11 @@
             0% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
             100% { transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
 </head>
@@ -81,6 +88,8 @@
             Дорогая мама, поздравляю тебя с 50-летием! Ты самая замечательная и любимая мама в мире! Желаю тебе счастья, здоровья и любви!
         </div>
         <div class="heart" style="top: 10px; left: 10px;"></div>
+        <div class="heart" style="top: 50px; right: 50px;"></div>
+        <div class="heart" style="bottom: 10px; left: 10px;"></div>
         <div class="balloon" style="bottom: 10px; right: 10px;"></div>
     </div>
 
@@ -108,5 +117,6 @@
     </script>
 </body>
 </html>
+
 
 
