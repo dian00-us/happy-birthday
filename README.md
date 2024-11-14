@@ -4,42 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Туған күніңмен!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #2c2c2c, #3b3a3a);
-            color: #f5f5f5;
+            font-family: 'Dancing Script', cursive;
+            background: linear-gradient(135deg, #f5e1d8, #f1c6a1);
+            color: #5e4a3a;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            position: relative;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            background-color: #fff8f2;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             position: relative;
+            transition: background-color 0.3s ease;
         }
         .header {
             text-align: center;
             margin: 40px 0;
         }
         .header h1 {
-            font-size: 3em;
-            font-family: 'Dancing Script', cursive;
-            color: #e63946;
+            font-size: 3.5em;
+            font-family: 'Great Vibes', cursive;
+            color: #a85d3a;
             margin: 0;
         }
         .subheader {
-            font-size: 1.5em;
+            font-size: 1.8em;
             text-align: center;
             margin: 20px 0;
             font-style: italic;
-            color: #f5f5f5;
+            color: #7a5038;
+            font-family: 'Great Vibes', cursive;
         }
         .section {
             display: flex;
@@ -51,18 +52,27 @@
             width: 48%;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .section img:hover {
+            transform: scale(1.05);
         }
         .text-box {
             width: 48%;
             text-align: left;
         }
         .envelope {
-            background-color: #fff;
-            border: 2px solid #e63946;
+            background-color: #fff8f2;
+            border: 2px solid #a85d3a;
             padding: 20px;
             border-radius: 10px;
             position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+        }
+        .envelope:hover {
+            background-color: #f1d4c4;
+            border-color: #8c4734;
         }
         .envelope:before {
             content: "";
@@ -72,35 +82,39 @@
             transform: translateX(-50%);
             border-left: 20px solid transparent;
             border-right: 20px solid transparent;
-            border-bottom: 20px solid #e63946;
+            border-bottom: 20px solid #a85d3a;
         }
         .envelope p {
-            color: #333;
-            font-size: 1.2em;
+            color: #5e4a3a;
+            font-size: 1.3em;
             line-height: 1.6;
+            font-family: 'Great Vibes', cursive;
         }
         .surprise {
             text-align: center;
             margin: 40px 0;
         }
         .surprise button {
-            background-color: #e63946;
+            background-color: #a85d3a;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
             font-size: 1.2em;
             cursor: pointer;
-            border-radius: 5px;
-            transition: transform 0.2s;
+            border-radius: 8px;
+            transition: transform 0.2s, background-color 0.3s;
+            font-family: 'Dancing Script', cursive;
         }
         .surprise button:hover {
             transform: scale(1.1);
+            background-color: #8c4734;
         }
         .surprise-text {
             display: none;
-            font-size: 1.2em;
+            font-size: 1.4em;
             margin-top: 20px;
-            color: #457b9d;
+            color: #7a5038;
+            font-family: 'Great Vibes', cursive;
         }
         .slideshow-container {
             position: relative;
@@ -110,6 +124,7 @@
         .slides {
             display: none;
             text-align: center;
+            transition: opacity 1s ease;
         }
         .slides img {
             width: 100%;
@@ -130,52 +145,37 @@
             display: inline-block;
         }
         .dots .active {
-            background-color: #e63946;
+            background-color: #a85d3a;
         }
 
-        /* Heart animations */
-        @keyframes float {
-            0% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100vh) scale(0.5);
-            }
-        }
-        .heart {
-            position: absolute;
-            font-size: 2em;
-            color: #e63946;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        /* Confetti */
+        /* Confetti animation (firework effect) */
         .confetti {
             position: fixed;
-            top: 0;
+            width: 5px;
+            height: 5px;
+            background: #f9a1bc;
+            opacity: 0;
+            top: 50%;
             left: 50%;
-            width: 100px;
-            height: 10px;
-            animation: fall 3s ease forwards;
+            animation: firework 1.5s ease-out forwards;
         }
-        @keyframes fall {
-            0% { transform: translateY(-100vh); opacity: 1; }
-            100% { transform: translateY(100vh); opacity: 0; }
+        @keyframes firework {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(4); }
         }
 
-        /* Animation for 50 */
+        /* Number "50" animation */
         .fifty {
             position: fixed;
             top: 20%;
             left: 50%;
             font-size: 5em;
             font-weight: bold;
-            color: #e63946;
+            color: #a85d3a;
             opacity: 0;
             transform: translateX(-50%) scale(1);
             animation: scaleUp 3s ease-in-out infinite;
+            font-family: 'Great Vibes', cursive;
         }
         @keyframes scaleUp {
             0%, 100% { opacity: 0; transform: translateX(-50%) scale(1); }
@@ -191,7 +191,7 @@
     </div>
 
     <div class="subheader">
-        Махаббатқа, қуанышқа және сәттілікке толы жылдар тілеймін!
+        Жылдар бойы сұлулығыңыз және сәлеметіңізбен таңдандыра беріңіз!
     </div>
 
     <div class="section">
@@ -225,60 +225,40 @@
         <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
 
-    <div class="heart" id="heart1">&#10084;</div>
-    <div class="heart" id="heart2">&#10084;</div>
     <div class="fifty">50</div>
 </div>
 
 <script>
-    // Heart animation across page
-    function createHearts() {
-        for (let i = 0; i < 20; i++) {
-            let heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = 3 + Math.random() * 2 + "s";
-            heart.innerHTML = "&#10084;";
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 5000);
-        }
-    }
-    setInterval(createHearts, 1000);
-
-    // Surprise and Confetti
+    // Show surprise with confetti
     function showSurprise() {
         document.getElementById('surprise-text').style.display = 'block';
         launchConfetti();
     }
 
     function launchConfetti() {
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 50; i++) {
             let confetti = document.createElement("div");
             confetti.classList.add("confetti");
-            confetti.style.left = Math.random() * 100 + "vw";
-            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.left = (Math.random() * 100) + "vw";
+            confetti.style.top = (Math.random() * 100) + "vh";
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
             document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 3000);
+            setTimeout(() => confetti.remove(), 1500);
         }
     }
 
-    // Automatic Slideshow with faster interval
+    // Automatic Slideshow
     let slideIndex = 0;
     function showSlides() {
         let i;
         let slides = document.getElementsByClassName("slides");
-        let dots = document.getElementsByClassName("dot");
         for (i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";  
         }
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}    
         slides[slideIndex - 1].style.display = "block";  
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        setTimeout(showSlides, 1500); // Faster transition
     }
     showSlides();
 </script>
