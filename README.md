@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
@@ -7,20 +8,21 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #3b3a3a;
+            background: linear-gradient(135deg, #2c2c2c, #3b3a3a);
             color: #f5f5f5;
             margin: 0;
             padding: 0;
-            position: relative;
             overflow-x: hidden;
+            position: relative;
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
+            position: relative;
         }
         .header {
             text-align: center;
@@ -37,7 +39,7 @@
             text-align: center;
             margin: 20px 0;
             font-style: italic;
-            color: #a8dadc;
+            color: #f5f5f5;
         }
         .section {
             display: flex;
@@ -54,7 +56,26 @@
             width: 48%;
             text-align: left;
         }
-        .text-box p {
+        .envelope {
+            background-color: #fff;
+            border: 2px solid #e63946;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .envelope:before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #e63946;
+        }
+        .envelope p {
+            color: #333;
             font-size: 1.2em;
             line-height: 1.6;
         }
@@ -143,6 +164,23 @@
             0% { transform: translateY(-100vh); opacity: 1; }
             100% { transform: translateY(100vh); opacity: 0; }
         }
+
+        /* Animation for 50 */
+        .fifty {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            font-size: 5em;
+            font-weight: bold;
+            color: #e63946;
+            opacity: 0;
+            transform: translateX(-50%) scale(1);
+            animation: scaleUp 3s ease-in-out infinite;
+        }
+        @keyframes scaleUp {
+            0%, 100% { opacity: 0; transform: translateX(-50%) scale(1); }
+            50% { opacity: 1; transform: translateX(-50%) scale(1.5); }
+        }
     </style>
 </head>
 <body>
@@ -158,7 +196,7 @@
 
     <div class="section">
         <img src="makeup-brushes.jpg" alt="Сервис">
-        <div class="text-box">
+        <div class="text-box envelope">
             <p>Сізге денсаулық, бақыт және махаббат тілейміз! Әр күніңіз қуанышқа толы болсын, және әр сәт сізге жаңа қуаныш сыйласын!</p>
             <p>Әр жыл сізді қуанышқа толтырып, махаббатпен және жарықпен орап алсын!</p>
         </div>
@@ -187,6 +225,9 @@
         <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
 
+    <div class="heart" id="heart1">&#10084;</div>
+    <div class="heart" id="heart2">&#10084;</div>
+    <div class="fifty">50</div>
 </div>
 
 <script>
@@ -221,7 +262,7 @@
         }
     }
 
-    // Automatic Slideshow
+    // Automatic Slideshow with faster interval
     let slideIndex = 0;
     function showSlides() {
         let i;
@@ -237,18 +278,10 @@
             dots[i].className = dots[i].className.replace(" active", "");
         }
         dots[slideIndex - 1].className += " active";
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
     showSlides();
 </script>
 
 </body>
 </html>
-```
-
-### Объяснение изменений:
-
-1. **Темный фон**: Основной фон теперь имеет более темный оттенок `#3b3a3a`, который создает приятный контраст с белыми и пастельными элементами.
-2. **Новый шрифт**: Шрифт заголовка заменен на более декоративный *Dancing Script*, чтобы добавить эстетики.
-3. **Анимация сердечек**: Сердечки появляются в разных местах по всей странице. Они плавают вверх и исчезают, создавая праздничное настроение.
-4.
