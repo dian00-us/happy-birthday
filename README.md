@@ -206,7 +206,7 @@
 <div class="container">
     <!-- Favicon audio for background music -->
     <audio id="background-music" autoplay loop>
-        <source src="your-audio-file.mp3" type="audio/mpeg">
+        <source src="https://github.com/dian00-us/birthday/raw/main/birthday_song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
@@ -224,7 +224,7 @@
     </div>
 
     <div class="section">
-        <img src="makeup-brushes.jpg" alt="Сервис">
+        <img src="https://github.com/dian00-us/happy-birthday/blob/main/phf.png?raw=true" alt="Сервис">
         <div class="text-box envelope">
             <p>Сізге денсаулық, бақыт және махаббат тілейміз! Әр күніңіз қуанышқа толы болсын, және әр сәт сізге жаңа қуаныш сыйласын❤️</p>
             <p>Анашым, 50 жыл бойы сіздің мейіріміңіз бен сүйіспеншілігіңіз менің өмірімді жарықтандырып келеді. Сіздің күлкіңіз мен үшін ең қымбат нәрсе, сол үшін еш мұңаймай, тек күлімсіреп жүруіңізді қалаймын. Алдағы өмір жолыңда денсаулығыңыз мықты болып, қуаныш пен бақыт әрдайым серігіңіз болсын, арман-мақсаттарыңыз орындалып, өмірдің ең әдемі сәттерін өзіңізге тарту етсін!!💖💖💖</p>
@@ -240,19 +240,40 @@
 
     <div class="slideshow-container">
         <div class="slides">
-            <img src="ph1.jpg" alt="Фото 1">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph1.jpg?raw=true" alt="Фото 1">
         </div>
         <div class="slides">
-            <img src="ph2.jpg" alt="Фото 2">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph2.jpg?raw=true" alt="Фото 2">
         </div>
         <div class="slides">
-            <img src="ph3.jpg" alt="Фото 3">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph3.jpg?raw=true" alt="Фото 3">
         </div> 
         <div class="slides">
-            <img src="ph4.jpg" alt="Фото 4">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph4.jpg?raw=true" alt="Фото 4">
         </div> 
         <div class="slides">
-            <img src="ph1.jpg" alt="Фото 1">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph5.jpg?raw=true" alt="Фото 5">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph6.jpg?raw=true" alt="Фото 6">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph7.jpg?raw=true" alt="Фото 7">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph8.jpg?raw=true" alt="Фото 8">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph9.jpg?raw=true" alt="Фото 9">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph10.jpg?raw=true" alt="Фото 10">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph11.jpg?raw=true" alt="Фото 11">
+        </div>
+        <div class="slides">
+            <img src="https://github.com/dian00-us/happy-birthday/blob/main/ph12.jpg?raw=true" alt="Фото 12">
         </div>
     </div>
     
