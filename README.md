@@ -166,8 +166,8 @@
 
         /* Number "50" animation */
         .fifty {
-            position: fixed;
-            top: 20%;
+            position: relative;
+            top: 20px;
             left: 50%;
             font-size: 5em;
             font-weight: bold;
@@ -181,11 +181,41 @@
             0%, 100% { opacity: 0; transform: translateX(-50%) scale(1); }
             50% { opacity: 1; transform: translateX(-50%) scale(1.5); }
         }
+
+        /* Music button */
+        .music-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .music-container button {
+            background-color: #a85d3a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .music-container button:hover {
+            background-color: #8c4734;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Favicon audio for background music -->
+    <audio id="background-music" autoplay loop>
+        <source src="your-audio-file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music control button -->
+    <div class="music-container">
+        <button onclick="toggleMusic()">Музыка</button>
+    </div>
+
     <div class="header">
         <h1>Туған күніңмен!</h1>
     </div>
@@ -201,6 +231,8 @@
             <p>Әр жыл сізді қуанышқа толтырып, махаббатпен және жарықпен орап алсын!</p>
         </div>
     </div>
+
+    <div class="fifty">50</div>
 
     <div class="surprise">
         <button onclick="showSurprise()">Сюрприз!</button>
@@ -224,8 +256,6 @@
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
-
-    <div class="fifty">50</div>
 </div>
 
 <script>
@@ -261,6 +291,16 @@
         setTimeout(showSlides, 1500); // Faster transition
     }
     showSlides();
+
+    // Toggle music
+    function toggleMusic() {
+        var audio = document.getElementById("background-music");
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    }
 </script>
 
 </body>
