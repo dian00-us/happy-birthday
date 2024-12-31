@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,45 +7,68 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #ffecd2, #fcb69f);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .card {
-      text-align: center;
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
     }
     h1 {
+      text-align: center;
       color: #ff6f61;
-      font-size: 3em;
+      margin: 20px;
     }
-    p {
-      font-size: 1.2em;
-      color: #333;
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
     }
-    .balloons {
-      animation: float 3s infinite;
+    .slide {
+      display: none;
     }
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @keyframes fade {
+      from {opacity: 0.4}
+      to {opacity: 1}
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>С Днем Рождения!</h1>
-    <p>Желаем счастья, здоровья и успехов!</p>
-    <div class="balloons">
-      🎈🎈🎈
+  <h1>С Днем Рождения!</h1>
+
+  <!-- Слайд-шоу -->
+  <div class="slideshow-container">
+    <div class="slide fade">
+      <img src="image1.jpg" alt="Слайд 1">
+    </div>
+    <div class="slide fade">
+      <img src="image2.jpg" alt="Слайд 2">
+    </div>
+    <div class="slide fade">
+      <img src="image3.jpg" alt="Слайд 3">
     </div>
   </div>
+
+  <!-- Фоновая музыка -->
+  <audio autoplay loop>
+    <source src="your-audio-file.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
+  <script>
+    // Слайд-шоу
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("slide");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Смена каждые 3 секунды
+    }
+  </script>
 </body>
 </html>
