@@ -1,124 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday</title>
-  <style>
-    /* Общий стиль */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fef7f2;
+            color: #5f4b3b;
+        }
 
-    /* Фон */
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #f5d5a4, #fce4ec);
-      overflow: hidden;
-      z-index: -1;
-    }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
 
-    /* Основной контент */
-    .content {
-      text-align: center;
-      color: #6a4f4b;
-      max-width: 90%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 15px;
-    }
+        header {
+            margin-bottom: 20px;
+        }
 
-    /* Заголовок */
-    h1 {
-      font-size: 3em;
-      font-weight: bold;
-      color: #b87333;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      margin-bottom: 20px;
-    }
+        header h1 {
+            font-size: 2.5em;
+            color: #c79a7e;
+        }
 
-    /* Слайд-шоу */
-    .slideshow-container {
-      position: relative;
-      max-width: 100%;
-      margin: auto;
-    }
+        .subtitle {
+            font-size: 1.2em;
+            color: #805f4c;
+        }
 
-    .slide {
-      display: none;
-    }
+        .slideshow {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
 
-    .slide img {
-      width: 100%;
-      border-radius: 10px;
-    }
+        .slide {
+            width: 100%;
+            display: none;
+            border-radius: 10px;
+        }
 
-    .fade {
-      animation: fadeEffect 2s infinite;
-    }
+        .slide.active {
+            display: block;
+        }
 
-    @keyframes fadeEffect {
-      from { opacity: 0.4; }
-      to { opacity: 1; }
-    }
+        .surprise-button {
+            background-color: #f7d9c4;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #5f4b3b;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px 0;
+            transition: 0.3s ease;
+        }
 
-    /* Аудиоплеер */
-    audio {
-      margin-top: 20px;
-      outline: none;
-    }
-  </style>
+        .surprise-button:hover {
+            background-color: #d7b59e;
+        }
+
+        .surprise {
+            margin: 20px 0;
+            font-size: 1.5em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .heart {
+            width: 100px;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9d3bf;
+            color: #5f4b3b;
+        }
+    </style>
 </head>
 <body>
-  <!-- Фоновый слой -->
-  <div class="background"></div>
-
-  <!-- Основной контент -->
-  <div class="content">
-    <h1>Happy Birthday!</h1>
-    <div class="slideshow-container">
-      <div class="slide fade">
-        <img src="image1.jpg" alt="Balloons">
-      </div>
-      <div class="slide fade">
-        <img src="image2.jpg" alt="Cake">
-      </div>
-      <div class="slide fade">
-        <img src="image3.jpg" alt="Gifts">
-      </div>
+    <div class="container">
+        <header>
+            <h1>С Днём Рождения, тётя!</h1>
+            <p class="subtitle">Мы тебя очень любим! Пусть этот день будет самым счастливым для тебя!</p>
+        </header>
+        
+        <main>
+            <div class="slideshow">
+                <img src="photo1.jpg" alt="Фото 1" class="slide active">
+                <img src="photo2.jpg" alt="Фото 2" class="slide">
+                <img src="photo3.jpg" alt="Фото 3" class="slide">
+            </div>
+            
+            <button class="surprise-button">Нажми для сюрприза!</button>
+            
+            <div class="surprise hidden">
+                <p>Ты самая лучшая тётя! Желаем счастья, здоровья и исполнения всех мечт!</p>
+                <img src="heart.png" alt="Сердечко" class="heart">
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2024 С любовью, от твоей племянницы</p>
+        </footer>
     </div>
-    <audio controls autoplay loop>
-      <source src="background-music.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+    <audio id="background-music" autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
     </audio>
-  </div>
+    <script>
+        // Слайд-шоу
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
 
-  <script>
-    let slideIndex = 0;
-    showSlides();
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // Смена каждые 3 секунды
-    }
-  </script>
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 3000);
+
+        // Кнопка-сюрприз
+        const surpriseButton = document.querySelector('.surprise-button');
+        const surprise = document.querySelector('.surprise');
+
+        surpriseButton.addEventListener('click', () => {
+            surprise.classList.toggle('hidden');
+            surpriseButton.textContent = surprise.classList.contains('hidden') 
+                ? 'Нажми для сюрприза!' 
+                : 'Сюрприз открыт!';
+        });
+    </script>
 </body>
 </html>
