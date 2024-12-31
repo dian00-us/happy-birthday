@@ -107,7 +107,7 @@
         <main>
             <div class="slideshow">
                 <img src="https://github.com/dian00-us/happy-birthday/blob/main/942b65b8-b19b-4b89-a812-61ca150a4f22.jpeg?raw=true" alt="Фото 1" class="slide active">
-                <img src="https://github.com/dian00-us/happy-birthday/blob/main/83542663-a00c-4215-94ff-1776d61453fe.jpeg? raw=true" alt="Фото 2" class="slide">
+               
                 <img src="https://github.com/dian00-us/happy-birthday/blob/main/82cbd7e6-d8cd-4b42-b1b0-b528fc3b52fc.jpeg?raw=true" alt="Фото 3" class="slide">
                 <img src="https://github.com/dian00-us/happy-birthday/blob/main/6dd3d1a8-739c-481d-ae96-622b1df79a95.jpeg?raw=true" alt="Фото 4" class="slide">
                 <img src="https://github.com/dian00-us/happy-birthday/blob/main/677c87cf-7bd9-4d08-b052-88dd159b7d5a.jpeg?raw=true" alt="Фото 5" class="slide">
