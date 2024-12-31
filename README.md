@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -115,7 +115,7 @@
         </footer>
     </div>
     <audio id="background-music" autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="https://github.com/dian00-us/birthday/raw/main/birthday_song.mp3" type="audio/mpeg">
     </audio>
     <script>
         // Слайд-шоу
