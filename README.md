@@ -1,61 +1,111 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>С Днем Рождения!</title>
+  <title>Happy Birthday</title>
   <style>
-    body {
+    /* Общий стиль */
+    body, html {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
-    h1 {
+
+    /* Фон */
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #f5d5a4, #fce4ec);
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    /* Основной контент */
+    .content {
       text-align: center;
-      color: #ff6f61;
-      margin: 20px;
+      color: #6a4f4b;
+      max-width: 90%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
     }
+
+    /* Заголовок */
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      color: #b87333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+    }
+
+    /* Слайд-шоу */
     .slideshow-container {
-      max-width: 100%;
       position: relative;
+      max-width: 100%;
       margin: auto;
     }
+
     .slide {
       display: none;
     }
-    img {
+
+    .slide img {
       width: 100%;
-      height: auto;
+      border-radius: 10px;
     }
-    @keyframes fade {
-      from {opacity: 0.4}
-      to {opacity: 1}
+
+    .fade {
+      animation: fadeEffect 2s infinite;
+    }
+
+    @keyframes fadeEffect {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    /* Аудиоплеер */
+    audio {
+      margin-top: 20px;
+      outline: none;
     }
   </style>
 </head>
 <body>
-  <h1>С Днем Рождения!</h1>
+  <!-- Фоновый слой -->
+  <div class="background"></div>
 
-  <!-- Слайд-шоу -->
-  <div class="slideshow-container">
-    <div class="slide fade">
-      <img src="image1.jpg" alt="Слайд 1">
+  <!-- Основной контент -->
+  <div class="content">
+    <h1>Happy Birthday!</h1>
+    <div class="slideshow-container">
+      <div class="slide fade">
+        <img src="image1.jpg" alt="Balloons">
+      </div>
+      <div class="slide fade">
+        <img src="image2.jpg" alt="Cake">
+      </div>
+      <div class="slide fade">
+        <img src="image3.jpg" alt="Gifts">
+      </div>
     </div>
-    <div class="slide fade">
-      <img src="image2.jpg" alt="Слайд 2">
-    </div>
-    <div class="slide fade">
-      <img src="image3.jpg" alt="Слайд 3">
-    </div>
+    <audio controls autoplay loop>
+      <source src="background-music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
   </div>
 
-  <!-- Фоновая музыка -->
-  <audio autoplay loop>
-    <source src="your-audio-file.mp3" type="audio/mpeg">
-    Ваш браузер не поддерживает аудио.
-  </audio>
-
   <script>
-    // Слайд-шоу
     let slideIndex = 0;
     showSlides();
 
@@ -65,7 +115,7 @@
         slides[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
+      if (slideIndex > slides.length) { slideIndex = 1 }
       slides[slideIndex - 1].style.display = "block";
       setTimeout(showSlides, 3000); // Смена каждые 3 секунды
     }
