@@ -1,4 +1,3 @@
-
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -107,9 +106,17 @@
         
         <main>
             <div class="slideshow">
-                <img src="photo1.jpg" alt="Фото 1" class="slide active">
-                <img src="photo2.jpg" alt="Фото 2" class="slide">
-                <img src="photo3.jpg" alt="Фото 3" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/942b65b8-b19b-4b89-a812-61ca150a4f22.jpeg?raw=true" alt="Фото 1" class="slide active">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/83542663-a00c-4215-94ff-1776d61453fe.jpeg" alt="Фото 2" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/82cbd7e6-d8cd-4b42-b1b0-b528fc3b52fc.jpeg?raw=true" alt="Фото 3" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/6dd3d1a8-739c-481d-ae96-622b1df79a95.jpeg?raw=true" alt="Фото 4" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/677c87cf-7bd9-4d08-b052-88dd159b7d5a.jpeg?raw=true" alt="Фото 5" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/52709f16-9fe4-474f-9879-47130280f47b.jpeg?raw=true" alt="Фото 6" class="slide"> 
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/44530081-a756-41de-859d-38e95d51c04f.jpeg?raw=true" alt="Фото 7" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/40fffc53-7e82-47fb-ac0b-f387f766c6d9.jpeg?raw=true" alt="Фото 8" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/1ae07659-6bb4-4246-8f07-d9e473c72b8c.jpeg?raw=true" alt="Фото 9" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/16af279d-f3bc-4e29-9b83-7fdeb4f965a4.jpeg?raw=true" alt="Фото 10" class="slide">
+                <img src="https://github.com/dian00-us/happy-birthday/blob/main/0931624b-3b7f-478e-aa8e-9ac997d264b0.jpeg?raw=true" alt="Фото 11" class="slide">
             </div>
             
             <button class="surprise-button">Нажми для сюрприза!</button>
